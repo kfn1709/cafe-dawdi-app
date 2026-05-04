@@ -148,3 +148,4 @@ if __name__ == '__main__':
     # Config.set('graphics', 'height', '640')
     CafeDawdiApp().run()
 
+# trigger
