@@ -1,0 +1,16 @@
+name: Build Cafe Dawdi
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build APK
+        uses: jreleaser/buildozer-action@v1
+        with:
+          command: android debug
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: CafeDawdi-Package
+          path: bin/*.apk
